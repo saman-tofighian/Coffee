@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
 @import 'tailwindcss';
 * {
   box-sizing: border-box;
@@ -11,4 +12,9 @@ body {
   font-size: 100%;
   overflow-x: hidden;
   user-select: none;
+}
+#fontMadi {
+  font-family: 'Ms Madi', cursive;
+  font-weight: 600;
+  font-style: normal;
 }
