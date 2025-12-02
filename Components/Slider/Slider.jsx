@@ -10,7 +10,7 @@ export default function Slider() {
   }));
 
   return (
-    <section className='bg-[#F2E5DA] mt-10 py-3 w-full overflow-hidden'>
+    <section className='bg-[#F2E5DA] mt-10 py-2.5 w-full overflow-hidden'>
       <Swiper
         modules={[Autoplay]}
         slidesPerView='auto'
@@ -24,15 +24,9 @@ export default function Slider() {
         }}
         allowTouchMove={false}
         centeredSlides={false}
-        style={{
-          transitionTimingFunction: 'linear',
-        }}
       >
         {items.map((item) => (
-          <SwiperSlide
-            key={item.id}
-            className='flex justify-center items-center !w-auto'
-          >
+          <SwiperSlide key={item.id} className='!w-auto'>
             <div className='flex items-center px-14 py-2'>
               <Image src={item.img} alt='slide' width={90} height={40} />
             </div>
