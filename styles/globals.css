@@ -21,3 +21,17 @@ body {
 .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+
+.scrollbar-custom::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #fff8f5;
+  border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #9e624c;
+  border-radius: 10px;
+}

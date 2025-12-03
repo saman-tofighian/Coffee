@@ -1,3 +1,4 @@
+import Categories from '@/Components/Categories/Categories';
 import Header from '@/Components/Header/Header';
 import Motto from '@/Components/Motto/Motto';
 import Slider from '../Components/Slider/Slider';
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Motto />
       <Slider />
+      <Categories />
     </main>
   );
 }
