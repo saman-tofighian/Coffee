@@ -74,7 +74,7 @@ export default function Categories() {
 
       <div
         ref={scrollRef}
-        className='flex gap-6 mt-10 py-4 overflow-x-scroll lg:overflow-x-hidden overflow-y-hidden scroll-smooth scrollbar-hide'
+        className='flex gap-6 mt-10 py-4 overflow-x-scroll xl:overflow-x-hidden overflow-y-hidden scroll-smooth scrollbar-hide'
       >
         {CategoriesItem.map((item, i) => (
           <motion.div

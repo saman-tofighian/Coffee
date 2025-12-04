@@ -1,3 +1,4 @@
+import Brands from '@/Components/Brands/Brands';
 import Categories from '@/Components/Categories/Categories';
 import Header from '@/Components/Header/Header';
 import Motto from '@/Components/Motto/Motto';
@@ -10,6 +11,7 @@ export default function Home() {
       <Motto />
       <Slider />
       <Categories />
+      <Brands />
     </main>
   );
 }
