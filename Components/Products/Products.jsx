@@ -80,8 +80,8 @@ export default function Products() {
 
   return (
     <section className='mt-24 px-[6%] w-full'>
-      <div className='flex justify-around items-center bg-white px-6 py-4 border-[#E9E9E8] border-[2px] rounded-[50px] w-full'>
-        <nav className='bg-[#E9E9E8] px-8 py-4 rounded-[20px]'>
+      <div className='flex flex-wrap justify-around items-center gap-y-8 bg-white px-6 py-4 border-[#E9E9E8] border-[2px] rounded-[50px] w-full'>
+        <nav className='gap-8 bg-[#E9E9E8] px-8 py-5 rounded-[20px] overflow-x-auto whitespace-nowrap'>
           <ul className='flex gap-x-5'>
             <li>
               <Link href='/'>شو کیک</Link>
@@ -102,7 +102,12 @@ export default function Products() {
               <Link href='/'>آسیاب قهوه</Link>
             </li>
             <li>
-              <Link href='/'>همه دسته بندی ها</Link>
+              <Link
+                href='/'
+                className='bg-[#FFFFFF] mr-5 xl:mr-0 px-3 py-2 rounded-[12px]'
+              >
+                همه دسته بندی ها
+              </Link>
             </li>
           </ul>
         </nav>
@@ -119,18 +124,16 @@ export default function Products() {
         </div>
       </div>
 
-      <div className='gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14'>
+      <div className='gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-14'>
         {products.map((item) => (
           <div
             key={item.id}
             className='relative bg-white shadow-sm hover:shadow-lg px-6 py-6 border border-[#EFEFEF] rounded-3xl transition-all duration-300 cursor-pointer'
           >
-            {/* Discount Badge */}
             <span className='top-4 right-4 absolute bg-[#2C1E17] px-3 py-1 rounded-full text-[13px] text-white'>
               {item.discount}
             </span>
 
-            {/* Image */}
             <div className='flex justify-center w-full'>
               <Image
                 src={item.img}
@@ -141,15 +144,12 @@ export default function Products() {
               />
             </div>
 
-            {/* Title */}
             <h3 className='mt-4 font-medium text-[#28221E] text-[16px] leading-6'>
               {item.title}
             </h3>
 
-            {/* Category */}
             <span className='text-[#8A8A8A] text-[13px]'>{item.category}</span>
 
-            {/* Prices */}
             <div className='mt-3'>
               <span className='text-[14px] text-gray-400 line-through'>
                 {item.oldPrice} تومان
@@ -162,8 +162,6 @@ export default function Products() {
           </div>
         ))}
       </div>
-
-      {/* View More Button */}
       <div className='flex justify-center mt-14 w-full'>
         <button className='flex items-center gap-x-6 bg-[#9E624C] hover:bg-[#915f46] shadow-md px-10 py-3 rounded-full text-[15px] text-white duration-500 ease-in-out cursor-pointer'>
           <span>
