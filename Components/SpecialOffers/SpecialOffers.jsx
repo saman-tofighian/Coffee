@@ -43,14 +43,11 @@ export default function SpecialDiscounts() {
   return (
     <section className='mt-20 px-[6%] w-full'>
       <div className='relative bg-[#2C1E17] px-5 py-12 rounded-3xl'>
-        {/* Title */}
         <h2 className='mb-8 font-bold text-[30px] text-white text-center'>
           تخفیفات ویژه
         </h2>
 
-        {/* White Box */}
         <div className='relative bg-white shadow-2xl mx-auto p-6 rounded-3xl max-w-[1200px]'>
-          {/* Tabs (Scrollable on mobile) */}
           <div className='flex xl:justify-center gap-8 mb-6 px-4 overflow-x-auto text-[#70675f] text-[15px] whitespace-nowrap'>
             <span className='cursor-pointer cup'>تجهیزات کافی و رستوران</span>
             <span className='cursor-pointer'>ابزار باریستا</span>
@@ -63,7 +60,6 @@ export default function SpecialDiscounts() {
             <span className='cursor-pointer'>دسته بندی ها</span>
           </div>
 
-          {/* Navigation Buttons */}
           <div className='hidden lg:flex'>
             <button className='top-1/2 -left-[25px] z-10 absolute flex justify-center items-center bg-[#E8D9CF] rounded-full w-[45px] h-[45px] swiper-button-prev'>
               <MdOutlineChevronLeft size={20} color='#000' />
@@ -74,7 +70,6 @@ export default function SpecialDiscounts() {
             </button>
           </div>
 
-          {/* Swiper Slider */}
           <Swiper
             modules={[Navigation, Autoplay]}
             navigation={{
