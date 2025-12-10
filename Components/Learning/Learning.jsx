@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaArrowLeftLong } from 'react-icons/fa6';
+import { MdOutlineChevronLeft, MdOutlineChevronRight } from 'react-icons/md';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -13,39 +13,48 @@ export default function Learning() {
       img: '/img/l1.png',
       title:
         'لورم ایپسوم متن ساختگی برای طراحان میباشد که با استفاده از آن متن تستی مینویسند!',
-      date: '۱۱ اردیبهشت ۱۴۰۳',
+      date: ' اردیبهشت ۱۴۰۳',
     },
     {
       id: 2,
       img: '/img/l2.png',
       title:
         'لورم ایپسوم متن ساختگی برای طراحان میباشد که با استفاده از آن متن تستی مینویسند!',
-      date: '۱۲ اردیبهشت ۱۴۰۳',
+      date: ' اردیبهشت ۱۴۰۳',
     },
     {
       id: 3,
       img: '/img/l3.png',
       title:
         'لورم ایپسوم متن ساختگی برای طراحان میباشد که با استفاده از آن متن تستی مینویسند!',
-      date: '۱۳ اردیبهشت ۱۴۰۳',
+      date: ' اردیبهشت ۱۴۰۳',
+    },
+    {
+      id: 4,
+      img: '/img/l1.png',
+      title:
+        'لورم ایپسوم متن ساختگی برای طراحان میباشد که با استفاده از آن متن تستی مینویسند!',
+      date: ' اردیبهشت ۱۴۰۳',
     },
   ];
 
   return (
     <section className='mt-24 px-[6%] w-full'>
-      <div className='relative bg-[#2C1E17] py-8 rounded-3xl'>
-        <h2 className='mt-4 mb-10 font-bold text-[30px] text-white text-center'>
+      <div className='relative bg-[#2C1E17] px-5 py-14 rounded-3xl'>
+        <h2 className='mb-8 font-bold text-[30px] text-white text-center'>
           آموزش های اریک کافه
         </h2>
 
-        <div className='relative bg-white shadow-2xl mx-auto px-5 py-8 rounded-3xl max-w-[1200px]'>
-          <button className='hidden top-1/2 -left-7 z-10 absolute lg:flex justify-center items-center bg-[#E8D9CF] rounded-full w-[48px] h-[48px] swiper-button-prev'>
-            <span className='text-xl'>›</span>
-          </button>
+        <div className='relative bg-white shadow-xl mx-auto p-6 rounded-3xl max-w-[1200px]'>
+          <div className='hidden lg:flex'>
+            <button className='top-1/2 -left-[25px] z-10 absolute flex justify-center items-center bg-[#E8D9CF] rounded-full w-[45px] h-[45px] cursor-pointer swiper-button-prev'>
+              <MdOutlineChevronLeft size={20} color='#000' />
+            </button>
 
-          <button className='hidden top-1/2 -right-7 z-10 absolute lg:flex justify-center items-center bg-[#E8D9CF] rounded-full w-[48px] h-[48px] swiper-button-next'>
-            <span className='text-xl rotate-180'>›</span>
-          </button>
+            <button className='top-1/2 -right-[25px] z-10 absolute flex justify-center items-center bg-[#E8D9CF] rounded-full w-[45px] h-[45px] cursor-pointer swiper-button-next'>
+              <MdOutlineChevronRight size={20} color='#000' />
+            </button>
+          </div>
 
           <Swiper
             modules={[Navigation, Autoplay]}
@@ -53,55 +62,50 @@ export default function Learning() {
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             }}
-            autoplay={{ delay: 3000 }}
-            spaceBetween={25}
+            autoplay={{ delay: 2500 }}
+            spaceBetween={20}
             slidesPerView={1}
             breakpoints={{
-              640: { slidesPerView: 2 },
+              940: { slidesPerView: 1 },
               1024: { slidesPerView: 3 },
             }}
           >
             {items.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className='bg-white shadow-sm hover:shadow-lg px-5 py-6 border border-[#EDEAE7] rounded-2xl transition-all duration-300'>
+                <div className='flex flex-col bg-white p-4 border border-[#EFEFEF] rounded-[20px] overflow-hidden'>
                   <Image
                     src={item.img}
-                    width={400}
-                    height={240}
-                    alt='course'
-                    className='rounded-xl w-full h-[210px] object-cover'
+                    alt={item.title}
+                    width={600}
+                    height={350}
+                    className='rounded-[10px] w-full h-[272px] object-center'
                   />
 
-                  <p className='mt-4 text-[#28221E] text-[15px] text-end leading-7'>
-                    {item.title}
-                  </p>
+                  <div className='px-5 pt-4 pb-5'>
+                    <h3 className='text-[#28221E] text-[15px] text-end leading-7'>
+                      {item.title}
+                    </h3>
 
-                  <div className='flex justify-between items-center mt-6 text-[14px]'>
-                    <span className='text-gray-500'>{item.date}</span>
+                    <div className='flex justify-between mt-7 w-full text-[#8F8F8F] text-[14px]'>
+                      <span>{item.date}</span>
 
-                    <Link
-                      href='/'
-                      className='flex items-center gap-x-2 font-semibold text-[#C5875D] hover:underline'
-                    >
-                      <span>
-                        <FaArrowLeftLong className='mt-1' />
-                      </span>
-                      مشاهده بیشتر
-                    </Link>
+                      <button className='flex items-center gap-x-2 font-medium text-[#9E624C] cursor-pointer'>
+                        <FaArrowLeftLong size={14} />
+                        مشاهده بیشتر
+                      </button>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
 
-          <div className='flex justify-center mt-10'>
-            <button className='flex items-center gap-x-6 bg-[#9E624C] hover:bg-[#915f46] shadow-md px-10 py-3 rounded-full text-[15px] text-white duration-500 ease-in-out cursor-pointer'>
-              <span>
-                <FaArrowLeftLong className='mt-1' />
-              </span>
-              مشاهده بیشتر
-            </button>
-          </div>
+        <div className='flex justify-center mt-14 w-full'>
+          <button className='flex items-center gap-x-3 bg-[#9E624C] hover:bg-[#8a5741] shadow-md px-12 py-3 rounded-full text-[16px] text-white transition cursor-pointer'>
+            <FaArrowLeftLong size={16} />
+            مشاهده بیشتر
+          </button>
         </div>
       </div>
     </section>
