@@ -1,5 +1,6 @@
 import Brands from '@/Components/Brands/Brands';
 import Categories from '@/Components/Categories/Categories';
+import Footer from '@/Components/Footer/Footer';
 import Header from '@/Components/Header/Header';
 import Learning from '@/Components/Learning/Learning';
 import Motto from '@/Components/Motto/Motto';
@@ -18,6 +19,7 @@ export default function Home() {
       <Brands />
       <Products />
       <Learning />
+      <Footer />
     </main>
   );
 }
