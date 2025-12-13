@@ -1,0 +1,345 @@
+import Footer from '@/Components/Footer/Footer';
+import Header from '@/Components/Header/Header';
+import { useState } from 'react';
+import { FaMinus, FaPlus, FaStar } from 'react-icons/fa';
+
+const productImages = [
+  '/img/p1.png',
+  '/img/p2.png',
+  '/img/p3.png',
+  '/img/p4.png',
+];
+
+export default function ProductPage() {
+  const [count, setCount] = useState(1);
+  const [activeImage, setActiveImage] = useState(productImages[0]);
+  const [activeTab, setActiveTab] = useState('description');
+
+  const handleIncrease = () => setCount((prev) => prev + 1);
+
+  const handleDecrease = () => {
+    if (count > 1) setCount((prev) => prev - 1);
+  };
+
+  const handleSelectImage = (src) => setActiveImage(src);
+
+  const handleChangeTab = (tab) => setActiveTab(tab);
+
+  return (
+    <>
+      <Header />
+
+      <main className='bg-[#FFF8F1] px-[6%] py-12'>
+        <div className='space-y-16 mx-auto max-w-6xl'>
+          {/* کارت بالای صفحه (تصویر + اطلاعات) */}
+          <section className='gap-10 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.05)] p-8 rounded-[32px]'>
+            {/* اطلاعات محصول - راست */}
+            <div className='flex flex-col justify-between order-2 lg:order-1'>
+              <div>
+                <p className='text-gray-400 text-xs'>
+                  قهوه / دانه قهوه اسپشالتی
+                </p>
+
+                <h1 className='mt-2 font-extrabold text-[#28221E] text-[28px] leading-relaxed'>
+                  دانه قهوه پَکت برند Boxilian
+                </h1>
+
+                <div className='flex items-center gap-2 mt-3 text-sm'>
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <FaStar key={i} className='text-[#C5875D]' />
+                  ))}
+                  <span className='text-gray-500'>(۴.۸ از ۱۲۳ نظر)</span>
+                </div>
+
+                {/* ویژگی‌های ارسال، ضمانت، پشتیبانی، پرداخت */}
+                <div className='gap-3 grid grid-cols-2 md:grid-cols-4 mt-6 text-xs'>
+                  <div className='flex items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
+                    <span className='flex justify-center items-center bg-[#F7E6D9] rounded-full w-7 h-7 text-[#9E624C] text-[10px]'>
+                      ارسال
+                    </span>
+                    <div>
+                      <p className='font-semibold text-[#28221E]'>ارسال سریع</p>
+                      <p className='text-[11px] text-gray-500'>
+                        تحویل ۲۴ تا ۷۲ ساعته
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className='flex items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
+                    <span className='flex justify-center items-center bg-[#F7E6D9] rounded-full w-7 h-7 text-[#9E624C] text-[10px]'>
+                      ضمانت
+                    </span>
+                    <div>
+                      <p className='font-semibold text-[#28221E]'>
+                        ضمانت کیفیت
+                      </p>
+                      <p className='text-[11px] text-gray-500'>
+                        بازگشت وجه در صورت نارضایتی
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className='flex items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
+                    <span className='flex justify-center items-center bg-[#F7E6D9] rounded-full w-7 h-7 text-[#9E624C] text-[10px]'>
+                      پشتیبانی
+                    </span>
+                    <div>
+                      <p className='font-semibold text-[#28221E]'>
+                        پشتیبانی ۲۴/۷
+                      </p>
+                      <p className='text-[11px] text-gray-500'>
+                        مشاوره تخصصی قهوه
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className='flex items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
+                    <span className='flex justify-center items-center bg-[#F7E6D9] rounded-full w-7 h-7 text-[#9E624C] text-[10px]'>
+                      پرداخت
+                    </span>
+                    <div>
+                      <p className='font-semibold text-[#28221E]'>پرداخت امن</p>
+                      <p className='text-[11px] text-gray-500'>
+                        درگاه بانکی معتبر
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <p className='mt-5 text-[14px] text-gray-600 leading-7'>
+                  ترکیبی از دانه‌های عربیکا با روست متوسط، مناسب برای اسپرسو و
+                  دریپ. عطر شکلات و مغزها، با بدنه متوسط و افترتیست شیرین که
+                  تجربه‌ای متعادل و دلنشین ایجاد می‌کند.
+                </p>
+
+                {/* قیمت و تخفیف */}
+                <div className='flex items-end gap-4 mt-6'>
+                  <div>
+                    <span className='block text-gray-400 text-xs'>
+                      قیمت قبل
+                    </span>
+                    <span className='text-gray-400 text-sm line-through'>
+                      ۳۶۰,۰۰۰ تومان
+                    </span>
+                  </div>
+                  <div>
+                    <span className='block text-[#C5875D] text-xs'>
+                      قیمت ویژه امروز
+                    </span>
+                    <div className='font-extrabold text-[#9E624C] text-[30px]'>
+                      ۲۴۰,۰۰۰ تومان
+                    </div>
+                  </div>
+                </div>
+
+                {/* انتخاب وزن */}
+                <div className='flex flex-wrap items-center gap-3 mt-6 text-xs'>
+                  <span className='text-gray-500'>وزن بسته:</span>
+                  <button className='px-4 py-2 border border-[#E2C8B6] rounded-full text-[#C5875D]'>
+                    ۲۵۰ گرم
+                  </button>
+                  <button className='bg-[#F7E6D9] px-4 py-2 border border-transparent hover:border-[#E2C8B6] rounded-full text-gray-500'>
+                    ۵۰۰ گرم
+                  </button>
+                  <button className='bg-[#F7E6D9] px-4 py-2 border border-transparent hover:border-[#E2C8B6] rounded-full text-gray-500'>
+                    ۱ کیلو
+                  </button>
+                </div>
+              </div>
+
+              {/* شمارنده و دکمه خرید */}
+              <div className='flex flex-wrap items-center gap-4 mt-8'>
+                <div className='flex items-center gap-4 bg-[#FFF9F4] px-4 py-2 border border-[#E3D3C7] rounded-full'>
+                  <button
+                    onClick={handleIncrease}
+                    className='flex justify-center items-center bg-[#9E624C] rounded-full w-8 h-8 text-white'
+                  >
+                    <FaPlus size={12} />
+                  </button>
+
+                  <span className='min-w-[24px] font-bold text-[#28221E] text-sm text-center'>
+                    {count}
+                  </span>
+
+                  <button
+                    onClick={handleDecrease}
+                    disabled={count === 1}
+                    className={`flex h-8 w-8 items-center justify-center rounded-full border border-[#E3D3C7] text-[#9E624C] ${
+                      count === 1 ? 'cursor-not-allowed opacity-40' : ''
+                    }`}
+                  >
+                    <FaMinus size={12} />
+                  </button>
+                </div>
+
+                <button className='bg-[#9E624C] hover:bg-[#8a523d] shadow-md px-10 py-3 rounded-full font-semibold text-white text-sm transition hover:-translate-y-[1px]'>
+                  افزودن به سبد خرید
+                </button>
+
+                <button className='text-[#C5875D] text-xs underline underline-offset-4'>
+                  افزودن به علاقه‌مندی‌ها
+                </button>
+              </div>
+            </div>
+
+            {/* بخش تصویر - چپ */}
+            <div className='flex flex-col items-center gap-5 order-1 lg:order-2'>
+              <div className='flex justify-center items-center bg-[#FFF9F4] border border-[#F0DED0] rounded-[28px] w-full h-[340px]'>
+                <img
+                  src={activeImage}
+                  alt='product'
+                  className='w-auto max-h-[260px] object-contain'
+                />
+              </div>
+
+              <div className='flex gap-3'>
+                {productImages.map((src) => (
+                  <button
+                    key={src}
+                    onClick={() => handleSelectImage(src)}
+                    className={`rounded-2xl border p-1 transition ${
+                      activeImage === src
+                        ? 'border-[#C5875D] bg-[#F7E6D9]'
+                        : 'border-[#E8D7CA] hover:border-[#C5875D]'
+                    }`}
+                  >
+                    <img
+                      src={src}
+                      alt='thumb'
+                      className='rounded-xl w-[64px] h-[64px] object-contain'
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* کارت توضیحات و تب‌ها */}
+          <section className='bg-white shadow-[0_18px_60px_rgba(0,0,0,0.04)] p-8 rounded-[32px]'>
+            {/* سربرگ تب‌ها */}
+            <div className='flex gap-8 border-[#F0E1D7] border-b text-sm'>
+              {[
+                { id: 'description', label: 'توضیحات محصول' },
+                { id: 'specs', label: 'مشخصات فنی' },
+                { id: 'reviews', label: 'نظرات کاربران' },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => handleChangeTab(tab.id)}
+                  className={`pb-3 transition ${
+                    activeTab === tab.id
+                      ? 'border-b-2 border-[#C5875D] text-[#C5875D]'
+                      : 'text-gray-500 hover:text-[#C5875D]'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* محتوای تب‌ها */}
+            <div className='mt-6 text-[14px] text-gray-600 leading-8'>
+              {activeTab === 'description' && (
+                <>
+                  <p>
+                    این قهوه ترکیبی از دانه‌های عربیکای ارتفاعات آمریکای جنوبی
+                    است که با روست متوسط، طعم متعادلی بین شیرینی و اسیدیته ایجاد
+                    می‌کند. نت‌های شکلات تلخ، فندق و کارامل آن را برای اسپرسو و
+                    لاته ایده‌آل کرده است.
+                  </p>
+                  <p className='mt-3'>
+                    فرآوری شسته و برشته‌کاری دقیق باعث شده این محصول تلخی
+                    آزاردهنده نداشته باشد و برای مصرف روزانه مناسب باشد. بهترین
+                    نتیجه در آسیاب تازه و دم‌آوری با دستگاه اسپرسوساز خانگی یا
+                    موکاپات به دست می‌آید.
+                  </p>
+                </>
+              )}
+
+              {activeTab === 'specs' && (
+                <ul className='space-y-2'>
+                  <li>نوع دانه: عربیکا ۱۰۰٪</li>
+                  <li>درجه روست: مدیوم</li>
+                  <li>مناسب برای: اسپرسو، موکاپات، فرنچ‌پرس</li>
+                  <li>کشور مبدأ: برزیل و کلمبیا</li>
+                </ul>
+              )}
+
+              {activeTab === 'reviews' && (
+                <div className='space-y-4 text-sm'>
+                  <p>
+                    میانگین امتیاز کاربران: ۴.۸ از ۵ بر اساس ۱۲۳ نظر ثبت شده.
+                  </p>
+                  <p>
+                    برای ثبت نظر خود، ابتدا محصول را خریداری و سپس وارد حساب
+                    کاربری شوید.
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* تصاویر وسط صفحه */}
+            <div className='gap-4 grid grid-cols-1 md:grid-cols-3 mt-8'>
+              <img
+                src='/img/sample1.png'
+                alt='gallery-1'
+                className='rounded-2xl w-full h-[160px] object-cover'
+              />
+              <img
+                src='/img/sample2.png'
+                alt='gallery-2'
+                className='rounded-2xl w-full h-[160px] object-cover'
+              />
+              <img
+                src='/img/sample3.png'
+                alt='gallery-3'
+                className='rounded-2xl w-full h-[160px] object-cover'
+              />
+            </div>
+          </section>
+
+          {/* محصولات پیشنهادی */}
+          <section className='space-y-6'>
+            <div className='flex justify-between items-center'>
+              <h3 className='font-bold text-[#28221E] text-[22px]'>
+                پیشنهادات ما
+              </h3>
+              <button className='text-[#C5875D] text-xs'>مشاهده همه</button>
+            </div>
+
+            <div className='gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'>
+              {[1, 2, 3, 4].map((i) => (
+                <article
+                  key={i}
+                  className='group flex flex-col items-center bg-white shadow-[0_14px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.08)] p-5 border border-[#F1E2D8] rounded-3xl text-center transition hover:-translate-y-1'
+                >
+                  <div className='flex justify-center items-center bg-[#FFF9F4] rounded-2xl w-full h-36'>
+                    <img
+                      src='/img/p1.png'
+                      alt='related-product'
+                      className='w-auto h-28 object-contain'
+                    />
+                  </div>
+
+                  <h4 className='mt-4 font-medium text-[#28221E] text-sm'>
+                    دانه قهوه پاکت برند Boxilian
+                  </h4>
+
+                  <div className='mt-2 font-bold text-[#9E624C] text-[14px]'>
+                    ۲۴۰,۰۰۰ تومان
+                  </div>
+
+                  <button className='bg-[#F7E6D9] group-hover:bg-white mt-3 px-4 py-2 border border-transparent group-hover:border-[#C5875D] rounded-full text-[#9E624C] text-xs transition'>
+                    مشاهده محصول
+                  </button>
+                </article>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <Footer />
+    </>
+  );
+}
