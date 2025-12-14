@@ -13,14 +13,13 @@ export default function Header() {
 
   const NavLinks = [
     { id: 1, name: 'صفحه اصلی', href: '/' },
-    { id: 2, name: 'لیست محصولات', href: '/' },
+    { id: 2, name: 'لیست محصولات', href: '/product' },
     { id: 3, name: 'خدمات', href: '/' },
     { id: 4, name: 'آموزش ها', href: '/' },
     { id: 5, name: 'درباره ما', href: '/' },
     { id: 6, name: 'تماس با ما', href: '/' },
   ];
 
-  // Animation variants for staggering items
   const listParent = {
     hidden: { opacity: 0 },
     show: {
@@ -36,7 +35,6 @@ export default function Header() {
 
   return (
     <header className='px-[6%] py-6 w-full'>
-      {/* Desktop Header */}
       <section className='hidden lg:grid grid-cols-12 w-full'>
         <div className='flex justify-start items-center gap-x-5 col-span-3'>
           <span className='flex justify-center items-center bg-[#9E624C] rounded-full w-[45px] h-[45px] cursor-pointer'>
@@ -69,7 +67,6 @@ export default function Header() {
         </div>
       </section>
 
-      {/* Desktop Nav */}
       <nav className='hidden lg:grid grid-cols-12 bg-[#28221E] mt-8 px-4 py-2.5 rounded-[100px] w-full'>
         <div className='col-span-2'>
           <Link
@@ -97,7 +94,6 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Header */}
       <section className='lg:hidden flex justify-between items-center w-full'>
         <span className='flex justify-center items-center bg-[#9E624C] rounded-full w-[40px] h-[40px] cursor-pointer'>
           <BsBasket size='1.2rem' color='#fff' />
@@ -115,7 +111,6 @@ export default function Header() {
         </motion.button>
       </section>
 
-      {/* Mobile Animated Menu */}
       <AnimatePresence>
         {openMenu && (
           <motion.div

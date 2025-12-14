@@ -31,76 +31,59 @@ export default function ProductPage() {
 
       <main className='bg-[#FFF8F1] px-[6%] py-12'>
         <div className='space-y-16 mx-auto max-w-6xl'>
-          {/* کارت بالای صفحه (تصویر + اطلاعات) */}
           <section className='gap-10 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.05)] p-8 rounded-[32px]'>
-            {/* اطلاعات محصول - راست */}
-            <div className='flex flex-col justify-between order-2 lg:order-1'>
+            <div className='flex flex-col justify-between order-2 lg:order-1 text-center lg:text-end'>
               <div>
-                <p className='text-gray-400 text-xs'>
-                  قهوه / دانه قهوه اسپشالتی
-                </p>
-
                 <h1 className='mt-2 font-extrabold text-[#28221E] text-[28px] leading-relaxed'>
-                  دانه قهوه پَکت برند Boxilian
+                  Boxilian دانه قهوه باکسی برند
                 </h1>
 
-                <div className='flex items-center gap-2 mt-3 text-sm'>
+                <p className='mt-3 text-gray-400 text-xs'>
+                  Boxilian : دانه قهوه | برند
+                </p>
+
+                <div className='flex justify-center lg:justify-end items-center gap-2 mt-3 text-sm'>
                   {[1, 2, 3, 4, 5].map((i) => (
                     <FaStar key={i} className='text-[#C5875D]' />
                   ))}
                   <span className='text-gray-500'>(۴.۸ از ۱۲۳ نظر)</span>
                 </div>
 
-                {/* ویژگی‌های ارسال، ضمانت، پشتیبانی، پرداخت */}
                 <div className='gap-3 grid grid-cols-2 md:grid-cols-4 mt-6 text-xs'>
-                  <div className='flex items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
-                    <span className='flex justify-center items-center bg-[#F7E6D9] rounded-full w-7 h-7 text-[#9E624C] text-[10px]'>
-                      ارسال
-                    </span>
-                    <div>
-                      <p className='font-semibold text-[#28221E]'>ارسال سریع</p>
-                      <p className='text-[11px] text-gray-500'>
-                        تحویل ۲۴ تا ۷۲ ساعته
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className='flex items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
-                    <span className='flex justify-center items-center bg-[#F7E6D9] rounded-full w-7 h-7 text-[#9E624C] text-[10px]'>
-                      ضمانت
-                    </span>
+                  <div className='flex justify-center lg:justify-end items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
                     <div>
                       <p className='font-semibold text-[#28221E]'>
-                        ضمانت کیفیت
+                        شرایط ارسال
                       </p>
-                      <p className='text-[11px] text-gray-500'>
-                        بازگشت وجه در صورت نارضایتی
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className='flex items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
-                    <span className='flex justify-center items-center bg-[#F7E6D9] rounded-full w-7 h-7 text-[#9E624C] text-[10px]'>
-                      پشتیبانی
-                    </span>
-                    <div>
-                      <p className='font-semibold text-[#28221E]'>
-                        پشتیبانی ۲۴/۷
-                      </p>
-                      <p className='text-[11px] text-gray-500'>
-                        مشاوره تخصصی قهوه
+                      <p className='mt-3 text-[11px] text-gray-500'>
+                        حدود ۲ الی ۶ روز کاری
                       </p>
                     </div>
                   </div>
 
-                  <div className='flex items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
-                    <span className='flex justify-center items-center bg-[#F7E6D9] rounded-full w-7 h-7 text-[#9E624C] text-[10px]'>
-                      پرداخت
-                    </span>
+                  <div className='flex justify-center lg:justify-end items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
                     <div>
-                      <p className='font-semibold text-[#28221E]'>پرداخت امن</p>
-                      <p className='text-[11px] text-gray-500'>
-                        درگاه بانکی معتبر
+                      <p className='font-semibold text-[#28221E]'>ضمانت کالا</p>
+                      <p className='mt-3 text-[11px] text-gray-500'>
+                        تا ۷ روز ضمانت عودت کالا
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className='flex justify-center lg:justify-end items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
+                    <div>
+                      <p className='font-semibold text-[#28221E]'>پشتیبانی</p>
+                      <p className='mt-3 text-[11px] text-gray-500'>
+                        پشتیبانی ۲۴ ساعته از تلگرام
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className='flex justify-center lg:justify-end items-center gap-2 bg-[#FFF9F4] px-3 py-2 border border-[#F0DED0] rounded-2xl'>
+                    <div>
+                      <p className='font-semibold text-[#28221E]'>پرداخت</p>
+                      <p className='mt-3 text-[11px] text-gray-500'>
+                        پرداخت امن از درگاه مطمئن
                       </p>
                     </div>
                   </div>
@@ -109,7 +92,7 @@ export default function ProductPage() {
                 <p className='mt-5 text-[14px] text-gray-600 leading-7'>
                   ترکیبی از دانه‌های عربیکا با روست متوسط، مناسب برای اسپرسو و
                   دریپ. عطر شکلات و مغزها، با بدنه متوسط و افترتیست شیرین که
-                  تجربه‌ای متعادل و دلنشین ایجاد می‌کند.
+                  تجربه‌ای متعادل و دلنشین ایجاد می‌کند
                 </p>
 
                 {/* قیمت و تخفیف */}
