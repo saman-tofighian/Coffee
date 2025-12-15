@@ -1,5 +1,6 @@
 import Footer from '@/Components/Footer/Footer';
 import Header from '@/Components/Header/Header';
+import Image from 'next/image';
 import { useState } from 'react';
 import { FaMinus, FaPlus, FaStar } from 'react-icons/fa';
 
@@ -29,7 +30,7 @@ export default function ProductPage() {
     <>
       <Header />
 
-      <main className='bg-[#FFF8F1] px-[6%] py-12'>
+      <main className='px-[6%] py-12'>
         <div className='space-y-16 mx-auto max-w-6xl'>
           <section className='gap-10 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] bg-white shadow-[0_18px_60px_rgba(0,0,0,0.05)] p-8 rounded-[32px]'>
             <div className='flex flex-col justify-between order-2 lg:order-1 text-center lg:text-end'>
@@ -95,8 +96,7 @@ export default function ProductPage() {
                   تجربه‌ای متعادل و دلنشین ایجاد می‌کند
                 </p>
 
-                {/* قیمت و تخفیف */}
-                <div className='flex items-end gap-4 mt-6'>
+                <div className='flex justify-center lg:justify-end items-end gap-4 mt-6'>
                   <div>
                     <span className='block text-gray-400 text-xs'>
                       قیمت قبل
@@ -115,9 +115,7 @@ export default function ProductPage() {
                   </div>
                 </div>
 
-                {/* انتخاب وزن */}
-                <div className='flex flex-wrap items-center gap-3 mt-6 text-xs'>
-                  <span className='text-gray-500'>وزن بسته:</span>
+                <div className='flex flex-wrap justify-center lg:justify-end items-center gap-3 mt-6 text-xs'>
                   <button className='px-4 py-2 border border-[#E2C8B6] rounded-full text-[#C5875D]'>
                     ۲۵۰ گرم
                   </button>
@@ -127,15 +125,15 @@ export default function ProductPage() {
                   <button className='bg-[#F7E6D9] px-4 py-2 border border-transparent hover:border-[#E2C8B6] rounded-full text-gray-500'>
                     ۱ کیلو
                   </button>
+                  <span className='text-gray-500'>: وزن بسته</span>
                 </div>
               </div>
 
-              {/* شمارنده و دکمه خرید */}
-              <div className='flex flex-wrap items-center gap-4 mt-8'>
+              <div className='flex flex-wrap justify-center lg:justify-end items-center gap-4 mt-8'>
                 <div className='flex items-center gap-4 bg-[#FFF9F4] px-4 py-2 border border-[#E3D3C7] rounded-full'>
                   <button
                     onClick={handleIncrease}
-                    className='flex justify-center items-center bg-[#9E624C] rounded-full w-8 h-8 text-white'
+                    className='flex justify-center items-center bg-[#9E624C] rounded-full w-8 h-8 text-white cursor-pointer'
                   >
                     <FaPlus size={12} />
                   </button>
@@ -147,7 +145,7 @@ export default function ProductPage() {
                   <button
                     onClick={handleDecrease}
                     disabled={count === 1}
-                    className={`flex h-8 w-8 items-center justify-center rounded-full border border-[#E3D3C7] text-[#9E624C] ${
+                    className={`flex h-8 w-8 items-center justify-center rounded-full border border-[#E3D3C7] text-[#9E624C] cursor-pointer ${
                       count === 1 ? 'cursor-not-allowed opacity-40' : ''
                     }`}
                   >
@@ -155,17 +153,16 @@ export default function ProductPage() {
                   </button>
                 </div>
 
-                <button className='bg-[#9E624C] hover:bg-[#8a523d] shadow-md px-10 py-3 rounded-full font-semibold text-white text-sm transition hover:-translate-y-[1px]'>
+                <button className='bg-[#9E624C] hover:bg-[#8a523d] shadow-md px-10 py-3 rounded-full font-semibold text-white text-sm transition hover:-translate-y-[1px] cursor-pointer'>
                   افزودن به سبد خرید
                 </button>
 
-                <button className='text-[#C5875D] text-xs underline underline-offset-4'>
+                <button className='text-[#C5875D] text-xs underline underline-offset-4 cursor-pointer'>
                   افزودن به علاقه‌مندی‌ها
                 </button>
               </div>
             </div>
 
-            {/* بخش تصویر - چپ */}
             <div className='flex flex-col items-center gap-5 order-1 lg:order-2'>
               <div className='flex justify-center items-center bg-[#FFF9F4] border border-[#F0DED0] rounded-[28px] w-full h-[340px]'>
                 <img
@@ -180,7 +177,7 @@ export default function ProductPage() {
                   <button
                     key={src}
                     onClick={() => handleSelectImage(src)}
-                    className={`rounded-2xl border p-1 transition ${
+                    className={`rounded-2xl border p-1 transition cursor-pointer ${
                       activeImage === src
                         ? 'border-[#C5875D] bg-[#F7E6D9]'
                         : 'border-[#E8D7CA] hover:border-[#C5875D]'
@@ -197,19 +194,17 @@ export default function ProductPage() {
             </div>
           </section>
 
-          {/* کارت توضیحات و تب‌ها */}
           <section className='bg-white shadow-[0_18px_60px_rgba(0,0,0,0.04)] p-8 rounded-[32px]'>
-            {/* سربرگ تب‌ها */}
-            <div className='flex gap-8 border-[#F0E1D7] border-b text-sm'>
+            <div className='flex justify-end gap-8 border-[#F0E1D7] border-b text-sm'>
               {[
-                { id: 'description', label: 'توضیحات محصول' },
-                { id: 'specs', label: 'مشخصات فنی' },
                 { id: 'reviews', label: 'نظرات کاربران' },
+                { id: 'specs', label: 'مشخصات فنی' },
+                { id: 'description', label: 'توضیحات محصول' },
               ].map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => handleChangeTab(tab.id)}
-                  className={`pb-3 transition ${
+                  className={`pb-3 transition cursor-pointer ${
                     activeTab === tab.id
                       ? 'border-b-2 border-[#C5875D] text-[#C5875D]'
                       : 'text-gray-500 hover:text-[#C5875D]'
@@ -220,28 +215,27 @@ export default function ProductPage() {
               ))}
             </div>
 
-            {/* محتوای تب‌ها */}
-            <div className='mt-6 text-[14px] text-gray-600 leading-8'>
+            <div className='mt-6 text-[14px] text-gray-600 text-end leading-8'>
               {activeTab === 'description' && (
                 <>
                   <p>
                     این قهوه ترکیبی از دانه‌های عربیکای ارتفاعات آمریکای جنوبی
                     است که با روست متوسط، طعم متعادلی بین شیرینی و اسیدیته ایجاد
                     می‌کند. نت‌های شکلات تلخ، فندق و کارامل آن را برای اسپرسو و
-                    لاته ایده‌آل کرده است.
+                    لاته ایده‌آل کرده است
                   </p>
                   <p className='mt-3'>
                     فرآوری شسته و برشته‌کاری دقیق باعث شده این محصول تلخی
                     آزاردهنده نداشته باشد و برای مصرف روزانه مناسب باشد. بهترین
                     نتیجه در آسیاب تازه و دم‌آوری با دستگاه اسپرسوساز خانگی یا
-                    موکاپات به دست می‌آید.
+                    موکاپات به دست می‌آید
                   </p>
                 </>
               )}
 
               {activeTab === 'specs' && (
                 <ul className='space-y-2'>
-                  <li>نوع دانه: عربیکا ۱۰۰٪</li>
+                  <li>نوع دانه: عربیکا %۱۰۰</li>
                   <li>درجه روست: مدیوم</li>
                   <li>مناسب برای: اسپرسو، موکاپات، فرنچ‌پرس</li>
                   <li>کشور مبدأ: برزیل و کلمبیا</li>
@@ -261,58 +255,66 @@ export default function ProductPage() {
               )}
             </div>
 
-            {/* تصاویر وسط صفحه */}
             <div className='gap-4 grid grid-cols-1 md:grid-cols-3 mt-8'>
-              <img
-                src='/img/sample1.png'
+              <Image
+                width={160}
+                height={250}
+                src='/img/b1.jpg'
                 alt='gallery-1'
-                className='rounded-2xl w-full h-[160px] object-cover'
+                className='rounded-2xl w-full h-[270px] object-center'
               />
-              <img
-                src='/img/sample2.png'
+              <Image
+                width={160}
+                height={250}
+                src='/img/b2.jpg'
                 alt='gallery-2'
-                className='rounded-2xl w-full h-[160px] object-cover'
+                className='rounded-2xl w-full h-[270px] object-center'
               />
-              <img
-                src='/img/sample3.png'
+              <Image
+                width={160}
+                height={250}
+                src='/img/b3.jpg'
                 alt='gallery-3'
-                className='rounded-2xl w-full h-[160px] object-cover'
+                className='rounded-2xl w-full h-[270px] object-center'
               />
             </div>
           </section>
 
-          {/* محصولات پیشنهادی */}
-          <section className='space-y-6'>
+          <section className='space-y-6 mt-28'>
             <div className='flex justify-between items-center'>
+              <button className='text-[#C5875D] cursor-pointer'>
+                مشاهده همه
+              </button>
               <h3 className='font-bold text-[#28221E] text-[22px]'>
                 پیشنهادات ما
               </h3>
-              <button className='text-[#C5875D] text-xs'>مشاهده همه</button>
             </div>
 
-            <div className='gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'>
+            <div className='gap-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4'>
               {[1, 2, 3, 4].map((i) => (
                 <article
                   key={i}
                   className='group flex flex-col items-center bg-white shadow-[0_14px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.08)] p-5 border border-[#F1E2D8] rounded-3xl text-center transition hover:-translate-y-1'
                 >
-                  <div className='flex justify-center items-center bg-[#FFF9F4] rounded-2xl w-full h-36'>
-                    <img
+                  <div className='flex justify-center items-center rounded-2xl w-full'>
+                    <Image
+                      width={200}
+                      height={180}
                       src='/img/p1.png'
                       alt='related-product'
-                      className='w-auto h-28 object-contain'
+                      className='w-auto h-[180px] object-center'
                     />
                   </div>
 
-                  <h4 className='mt-4 font-medium text-[#28221E] text-sm'>
-                    دانه قهوه پاکت برند Boxilian
+                  <h4 className='mt-6 font-medium text-[#28221E] text-sm'>
+                    Boxilian دانه قهوه پاکت برند
                   </h4>
 
-                  <div className='mt-2 font-bold text-[#9E624C] text-[14px]'>
+                  <div className='mt-4 font-bold text-[#9E624C] text-[14px]'>
                     ۲۴۰,۰۰۰ تومان
                   </div>
 
-                  <button className='bg-[#F7E6D9] group-hover:bg-white mt-3 px-4 py-2 border border-transparent group-hover:border-[#C5875D] rounded-full text-[#9E624C] text-xs transition'>
+                  <button className='bg-[#F7E6D9] group-hover:bg-white mt-4 px-10 py-2 border border-transparent group-hover:border-[#C5875D] rounded-full text-[#9E624C] text-xs transition cursor-pointer'>
                     مشاهده محصول
                   </button>
                 </article>
