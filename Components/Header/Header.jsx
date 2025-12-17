@@ -41,7 +41,7 @@ export default function Header() {
             <BsBasket size='1.3rem' color='#fff' />
           </span>
           <Link
-            href='/'
+            href='/login'
             className='bg-transparent hover:bg-black px-5 py-2 border border-[#000] rounded-[100px] font-medium text-[16px] text-black hover:text-white duration-500 ease-in-out'
           >
             ورود / ثبت نام

@@ -3,7 +3,7 @@ import { CiCoffeeBean } from 'react-icons/ci';
 
 export default function LoginPage() {
   return (
-    <main className='bg-[#fff8f5] w-full min-h-[100vh]'>
+    <main className='bg-[#fff8f5] w-full'>
       <section className='px-[12%] pt-5 w-full'>
         <nav className='grid grid-cols-12 w-full'>
           <div className='flex items-center gap-x-3 col-span-6'>
