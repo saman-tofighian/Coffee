@@ -16,8 +16,8 @@ export default function Header() {
     { id: 2, name: 'لیست محصولات', href: '/product' },
     { id: 3, name: 'خدمات', href: '/service' },
     { id: 4, name: 'آموزش ها', href: '/learning' },
-    { id: 5, name: 'درباره ما', href: '/' },
-    { id: 6, name: 'تماس با ما', href: '/' },
+    { id: 5, name: 'درباره ما', href: '/aboutus' },
+    { id: 6, name: 'تماس با ما', href: '/contactus' },
   ];
 
   const listParent = {
